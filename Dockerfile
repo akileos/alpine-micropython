@@ -6,7 +6,7 @@ RUN  apk add --verbose --update libffi-dev python-dev git g++ make perl coreutil
   cd / ;\
   git clone https://github.com/micropython/micropython.git ; \
   git clone https://github.com/micropython/micropython-lib.git ; \
-  cd /micropython/unix &&  make axtls &&  make ; \
-  cd  /micropython-lib &&  make install && cd / && rm -rf micropython-lib
+  cd /micropython/unix &&  make axtls &&  make && make instakk ; \
+  cd  /micropython-lib &&  make install && cd / && rm -rf micropython-lib micropython
 
-ENTRYPOINT ["/micropython/unix/micropython"]
+ENTRYPOINT ["/usr/local/bin/micropython"]
